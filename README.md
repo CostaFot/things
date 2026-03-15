@@ -7,11 +7,13 @@ Entries live in `index.md` and are grouped by date. The site is deployed automat
 ## Format
 
 ```markdown
-# Things
-
 ## 15 March 2026
 
 - [Article title](https://...) — optional comment
 - [Some YouTube Video Title](https://youtu.be/xxx)
 - Just a plain note with no URL
 ```
+
+## Adding entries
+
+Entries are added via [things-bot](https://github.com/CostaFot/things-bot) — a Telegram bot that commits directly to this repo.
