@@ -39,7 +39,7 @@ GH_HEADERS = {
 async def gh_get_file(client: httpx.AsyncClient) -> tuple[str, str]:
     """Returns (content, sha) of the markdown file."""
     url = f"{GH_API}/repos/{GITHUB_REPO}/contents/{GITHUB_FILE_PATH}"
-    r = await client.get(url, headers=GH_HEADERS)
+    r = await client.get(url, headers=GH_HEADERS, timeout=10)
     r.raise_for_status()
     data = r.json()
     import base64
@@ -55,7 +55,7 @@ async def gh_update_file(client: httpx.AsyncClient, content: str, sha: str, mess
         "content": base64.b64encode(content.encode("utf-8")).decode("utf-8"),
         "sha": sha,
     }
-    r = await client.put(url, headers=GH_HEADERS, json=payload)
+    r = await client.put(url, headers=GH_HEADERS, json=payload, timeout=10)
     r.raise_for_status()
 
 # ── URL / title helpers ────────────────────────────────────────────────────────
@@ -183,53 +183,58 @@ async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     url, comment = split_url_and_comment(text)
 
-    async with httpx.AsyncClient() as client:
-        # Resolve title
-        if url:
-            yt_id = extract_youtube_id(url)
-            if yt_id:
-                title = await get_youtube_title(client, yt_id)
+    try:
+        async with httpx.AsyncClient() as client:
+            # Resolve title
+            if url:
+                yt_id = extract_youtube_id(url)
+                if yt_id:
+                    title = await get_youtube_title(client, yt_id)
+                else:
+                    title = await get_page_title(client, url)
+                summary = await get_ai_summary(client, title, url, comment)
             else:
-                title = await get_page_title(client, url)
-            summary = await get_ai_summary(client, title, url, comment)
-        else:
-            title = comment
-            url = None
-            summary = ""
+                title = comment
+                url = None
+                summary = ""
 
-        # Build the new entry line
-        entry = build_entry(title, url, comment, summary)
+            # Build the new entry line
+            entry = build_entry(title, url, comment, summary)
 
-        # Read → update → commit
-        try:
-            content, sha = await gh_get_file(client)
-        except httpx.HTTPStatusError as e:
-            if e.response.status_code == 404:
-                # File doesn't exist yet — create it
-                content = "# Things\n"
-                sha = None
+            # Read → update → commit
+            try:
+                content, sha = await gh_get_file(client)
+            except httpx.HTTPStatusError as e:
+                if e.response.status_code == 404:
+                    # File doesn't exist yet — create it
+                    content = "# Things\n"
+                    sha = None
+                else:
+                    raise
+
+            updated = insert_entry(content, entry)
+            commit_msg = f"things: add {title[:60]}"
+
+            if sha:
+                await gh_update_file(client, updated, sha, commit_msg)
             else:
-                raise
+                # Create new file
+                import base64
+                r = await client.put(
+                    f"{GH_API}/repos/{GITHUB_REPO}/contents/{GITHUB_FILE_PATH}",
+                    headers=GH_HEADERS,
+                    json={
+                        "message": commit_msg,
+                        "content": base64.b64encode(updated.encode()).decode(),
+                    }
+                )
+                r.raise_for_status()
 
-        updated = insert_entry(content, entry)
-        commit_msg = f"things: add {title[:60]}"
+        await update.message.reply_text(f"✅ Added: *{title}*", parse_mode="Markdown")
 
-        if sha:
-            await gh_update_file(client, updated, sha, commit_msg)
-        else:
-            # Create new file
-            import base64
-            r = await client.put(
-                f"{GH_API}/repos/{GITHUB_REPO}/contents/{GITHUB_FILE_PATH}",
-                headers=GH_HEADERS,
-                json={
-                    "message": commit_msg,
-                    "content": base64.b64encode(updated.encode()).decode(),
-                }
-            )
-            r.raise_for_status()
-
-    await update.message.reply_text(f"✅ Added: *{title}*", parse_mode="Markdown")
+    except Exception as e:
+        log.exception("Failed to save entry")
+        await update.message.reply_text(f"❌ Error: {e}")
 
 async def handle_start(update: Update, context: ContextTypes.DEFAULT_TYPE):
     if update.effective_user.id != ALLOWED_USER_ID:
