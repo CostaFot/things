@@ -2,6 +2,11 @@
 layout: default
 title: Things
 ---
+
+## 16 March 2026
+
+- [x.com](https://x.com/cramforce/status/2033285112478171373) — drama over forking lol
+
 ## 15 March 2026
 
 - [CostaFot (Costa Fotiadis) · GitHub](https://github.com/CostaFot#-latest-posts) — I made a GHA that auto-updates the latest posts on my readme. should write a blog for this when I get the chance
