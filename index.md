@@ -2,6 +2,7 @@
 ## 17 March 2026
 
 
+- <img src="https://cdn.simpleicons.org/x" width="14" height="14" style="vertical-align:middle"> [x.com](https://x.com/markasduplicate) — cheking twitter link and additional comment
 - <img src="https://cdn.simpleicons.org/x" width="14" height="14" style="vertical-align:middle"> [x.com](https://x.com/markasduplicate)
 - <img src="https://cdn.simpleicons.org/instagram" width="14" height="14" style="vertical-align:middle"> [www.instagram.com](https://www.instagram.com/costafot95/)
 - <img src="https://cdn.simpleicons.org/youtube" width="14" height="14" style="vertical-align:middle"> [Are There Tech Bros in China? China's Tech Culture with Afra Wang](https://youtu.be/QBT4ZoGl27g?si=XoOrxpI9PEe7cdfU)
