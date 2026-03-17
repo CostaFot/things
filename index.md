@@ -2,6 +2,7 @@
 ## 17 March 2026
 
 
+- <img src="https://cdn.simpleicons.org/ycombinator" width="14" height="14" style="vertical-align:middle"> [Kagi Translate now supports LinkedIn Speak as an output language | Hacker News](https://news.ycombinator.com/item?id=47408703) — linkedin speak translator 😂
 - <img src="https://cdn.simpleicons.org/x" width="14" height="14" style="vertical-align:middle"> [x.com](https://x.com/markasduplicate) — cheking twitter link and additional comment
 - <img src="https://cdn.simpleicons.org/x" width="14" height="14" style="vertical-align:middle"> [x.com](https://x.com/markasduplicate)
 - <img src="https://cdn.simpleicons.org/instagram" width="14" height="14" style="vertical-align:middle"> [www.instagram.com](https://www.instagram.com/costafot95/)
