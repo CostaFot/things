@@ -2,6 +2,7 @@
 ## 17 March 2026
 
 
+- <img src="https://cdn.simpleicons.org/youtube" width="14" height="14" style="vertical-align:middle"> [Are There Tech Bros in China? China's Tech Culture with Afra Wang](https://youtu.be/QBT4ZoGl27g?si=XoOrxpI9PEe7cdfU)
 - ▶️ [Oppo Find N6 Review: Likely Best Foldable of 2026](https://youtu.be/1CSGykPtNAM?si=4O6f6Bredv0M-lVz)
 - 💡 blog about production incidents for mobile devs
 - 💬 💡 deeplinking in compose
