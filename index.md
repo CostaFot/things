@@ -5,6 +5,7 @@ title: Things
 
 ## 17 March 2026
 
+- blog idea 💡 production incidents for mobile devs
 - blog idea 💡 deeplinking in compose
 - I should make this accept images too ✨
 
