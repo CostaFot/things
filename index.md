@@ -3,6 +3,11 @@ layout: default
 title: Things
 ---
 
+## 17 March 2026
+
+- I should make this accept images too ✨
+
+
 ## 16 March 2026
 
 - [x.com](https://x.com/Polymarket/status/2033516993735770562?s=20) — I can't take this timeline man 😂
