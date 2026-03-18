@@ -1,3 +1,8 @@
+## 18 March 2026
+
+
+- 🔗 [1999 Greek stock market crash - Wikipedia](https://en.wikipedia.org/wiki/1999_Greek_stock_market_crash) — wild times 😂. What made it particularly brutal socially: active investors had reached 1.5 million  in a country of ~10 million people. Basically every family had someone in the market.
+
 
 ## 17 March 2026
 
