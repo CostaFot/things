@@ -1,3 +1,8 @@
+## 19 March 2026
+
+
+- 💡 blog for EOY reviews. big numbers are everything/ make it short
+
 ## 18 March 2026
 
 
