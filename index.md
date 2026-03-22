@@ -1,3 +1,8 @@
+## 22 March 2026
+
+
+- 🔗 [Omakub — An Omakase Developer Setup for Ubuntu 24.04+ by DHH](https://omakub.org/) — tried out omakub. some tinkering involved to make things work but not bad at all.
+
 ## 21 March 2026
 
 
