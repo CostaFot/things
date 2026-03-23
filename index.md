@@ -1,3 +1,8 @@
+## 23 March 2026
+
+
+- 💡 right about migrating from github json to database for claps api
+
 ## 22 March 2026
 
 
