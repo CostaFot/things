@@ -1,6 +1,7 @@
 ## 23 March 2026
 
 
+- 💬 need to make my share buttons mobile friendly
 - 💡 right about migrating from github json to database for claps api
 
 ## 22 March 2026
