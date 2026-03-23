@@ -1,6 +1,7 @@
 ## 23 March 2026
 
 
+- 💡 - write blog how to auto-refresh blog list with this workflow https://github.com/CostaFot/CostaFot/blob/main/.github/workflows/blog-post-workflow.yml
 - 💡 - fear and greed index android widget https://rapidapi.com/rpi4gx/api/fear-and-greed-index
 - 💬 need to make my share buttons mobile friendly
 - 💡 right about migrating from github json to database for claps api
