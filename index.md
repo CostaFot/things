@@ -1,3 +1,8 @@
+## 25 March 2026
+
+
+- 🔗 [Button Animation CSS: 75 beautiful CSS Buttons - DEV Community](https://dev.to/webdeasy/top-20-css-buttons-animations-f41)
+
 ## 23 March 2026
 
 
