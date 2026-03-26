@@ -1,6 +1,7 @@
 ## 26 March 2026
 
 
+- 💡 blog about autohotkey window tiling
 - 💡 windows pricing blog
 
 ## 25 March 2026
