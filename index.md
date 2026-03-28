@@ -1,3 +1,8 @@
+## 28 March 2026
+
+
+- 💡 blog about pivoting due to AI creeping up on things that made me special
+
 ## 26 March 2026
 
 
