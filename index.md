@@ -1,6 +1,7 @@
 ## 30 March 2026
 
 
+- 💬 signpost
 - <img src="https://cdn.simpleicons.org/youtube" width="14" height="14" style="vertical-align:middle"> [This Scares Me - Are You Ready For What's Next?](https://youtu.be/8ErL9-sHB48?si=UUfwU9MZcYknMG_g)
 
 ## 28 March 2026
