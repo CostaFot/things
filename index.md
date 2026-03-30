@@ -1,6 +1,7 @@
 ## 30 March 2026
 
 
+- 🔗 [Metro](https://zacsweers.github.io/metro/latest/) — try this out
 - 🔗 [Vibe coding SwiftUI apps is a lot of fun](https://simonwillison.net/2026/Mar/27/vibe-coding-swiftui/)
 - 💡 build a CMP desktop app for activity monitor. make it memeable
 - 🖼️ <img src="https://raw.githubusercontent.com/CostaFot/things/main/images/20260330_194547.jpg" alt="crossed 100 unique visitors for the month. yay" width="320"> — crossed 100 unique visitors for the month. yay
