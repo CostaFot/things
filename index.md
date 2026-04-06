@@ -1,6 +1,7 @@
 ## 6 April 2026
 
 
+- <img src="https://cdn.simpleicons.org/youtube" width="14" height="14" style="vertical-align:middle"> [The Fastest Way To Learn Godot is to Learn Pico-8 (Beginner’s Guide)](https://youtu.be/Ch57gsOLcbo?si=10K3PO3GDlqGFoAL)
 - <img src="https://cdn.simpleicons.org/youtube" width="14" height="14" style="vertical-align:middle"> [Godot in 100 Seconds](https://youtu.be/QKgTZWbwD1U?si=AqQIdLFUr5GOLrnx)
 
 ## 4 April 2026
