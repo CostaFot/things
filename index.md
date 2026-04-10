@@ -1,6 +1,7 @@
 ## 10 April 2026
 
 
+- 💡 cmd palette extension - inappropriate clippy. walks around on the dock, random speech bubble saying stuff. extra functionality could be RAM/CPU usage related puns or memes
 - 💡 cmd palette stocks extension
 - 💡 command palette ADB Quick Commands — run common adb commands (clear app data, force-stop, take screenshot, open deep link) without touching a terminal
 
