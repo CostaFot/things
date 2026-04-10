@@ -1,3 +1,8 @@
+## 10 April 2026
+
+
+- 💡 command palette ADB Quick Commands — run common adb commands (clear app data, force-stop, take screenshot, open deep link) without touching a terminal
+
 ## 6 April 2026
 
 
