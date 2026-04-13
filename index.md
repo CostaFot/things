@@ -1,3 +1,8 @@
+## 13 April 2026
+
+
+- 💡 chrome extension bookmark side bar on hover
+
 ## 10 April 2026
 
 
