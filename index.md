@@ -1,3 +1,8 @@
+## 15 April 2026
+
+
+- <img src="https://cdn.simpleicons.org/youtube" width="14" height="14" style="vertical-align:middle"> [DEMOCRAWLER // Stellar Blade OST by original singer Pernelle.](https://youtu.be/D2eLCE2-64I?si=ogwj4Qk03VtOXsTI) — berry cool
+
 ## 13 April 2026
 
 
