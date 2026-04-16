@@ -1,3 +1,8 @@
+## 16 April 2026
+
+
+- 💡 blog write about rememberTextMeasurer usages
+
 ## 15 April 2026
 
 
