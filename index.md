@@ -1,3 +1,8 @@
+## 15 June 2026
+
+
+- 💡 anti slop app that uses gemma 4 to screenshot current screen, extract the relevant post and send it to pangra for slop AI check
+
 ## 16 April 2026
 
 
