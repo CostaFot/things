@@ -1,3 +1,8 @@
+## 19 June 2026
+
+
+- 💡 blog about training in flank timings to resolve best shard combo
+
 ## 17 June 2026
 
 
