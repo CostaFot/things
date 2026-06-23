@@ -1,3 +1,8 @@
+## 23 June 2026
+
+
+- 🖼️ <img src="https://raw.githubusercontent.com/CostaFot/things/main/images/20260623_185049.jpg" alt="slow and steady?" width="320"> — slow and steady?
+
 ## 20 June 2026
 
 
