@@ -1,6 +1,7 @@
 ## 28 June 2026
 
 
+- 💡 cv as webpage on my site. allow downloade as pdf
 - 💡 fear and greed dock
 
 ## 23 June 2026
