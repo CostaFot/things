@@ -1,3 +1,8 @@
+## 28 June 2026
+
+
+- 💡 fear and greed dock
+
 ## 23 June 2026
 
 
