@@ -1,3 +1,8 @@
+## 21 July 2026
+
+
+- 💡 blog about using AI daily ona corpo environment
+
 ## 6 July 2026
 
 
