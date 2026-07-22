@@ -1,3 +1,8 @@
+## 22 July 2026
+
+
+- 🖼️ <img src="https://raw.githubusercontent.com/CostaFot/things/main/images/20260722_184413.jpg" alt="200. maybe they are AI bots. maybe not?" width="320"> — 200. maybe they are AI bots. maybe not?
+
 ## 21 July 2026
 
 
