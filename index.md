@@ -1,3 +1,8 @@
+## 25 July 2026
+
+
+- 💡 blog about loading stuff at VM init and that there is nothing wrong with that and how to unit test simply
+
 ## 22 July 2026
 
 
