@@ -1,6 +1,7 @@
 ## 15 August 2026
 
 
+- 💡 blog with all my projects and few words about them. keep it brief, mainly showcase and links. if I have written an dedicated blog post link to that too
 - 💡 write blog about the most common gadgets and things that I use
 
 ## 25 July 2026
