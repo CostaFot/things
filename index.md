@@ -1,3 +1,8 @@
+## 15 August 2026
+
+
+- 💡 write blog about the most common gadgets and things that I use
+
 ## 25 July 2026
 
 
