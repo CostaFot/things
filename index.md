@@ -1,6 +1,7 @@
 ## 15 August 2026
 
 
+- 💡 url uptime extension. give it a url and it pings it periodically and shows on dock if up/down
 - 💬 read book Robert Kuok: A Memoir
 - 💡 blog with all my projects and few words about them. keep it brief, mainly showcase and links. if I have written an dedicated blog post link to that too
 - 💡 write blog about the most common gadgets and things that I use
