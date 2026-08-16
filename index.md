@@ -1,3 +1,24 @@
+## 16 August 2026
+
+
+- 💬 Biggest gaps (Omarchy has many, CmdPal has zero)
+1. VPN control — Omarchy has ten of these (Mullvad, Proton, IVPN, Mozilla, PIA, AirVPN, NetBird, FortiVPN, BlueFerry). CmdPal has only Tailscale. A "VPN" extension wrapping the Mullvad/Proton CLIs with connect/disconnect, server picker, and a Dock status tile is the single most obvious hole.
+2. AI agent usage & quota — Omarchy has AI Usage, Agent Usage, Cline Usage, OpenCode Usage, OpenRouter Usage, Codex Notifications, CodexBar, Wayfinder (model routing), Colophon (Ollama control). CmdPal has one LLM chat extension and nothing else. "How much Claude/Codex quota do I have left, when does it reset" as a Dock tile is timely and nobody's built it.
+3. winget update manager — Omarchy has Pacman Sentry and System Updates; CmdPal has nothing for package updates. Pending-update count on the Dock, list with per-package upgrade, upgrade-all. This is the highest utility-to-effort ratio on the list.
+4. Calendar / next meeting — Omarchy has Calendar and Desktop Agenda. CmdPal has no calendar extension at all. next meeting → join link, one Enter. Killer command.
+5. Per-app audio routing — Omarchy's Advanced Audio Control does per-application output routing and device profiles. CmdPal's Audio Status only switches the global default. Windows buries per-app routing three menus deep in Settings; a palette version is genuinely better than the OS.
+Strong secondary ideas
+Home Assistant — view/control entities, run scenes. Omarchy has it, CmdPal doesn't. Scenes as Dock toggles.
+Device battery levels — mouse, keyboard, headset, controller (Omarchy: Peripheral Battery Indicator, Device Battery Stats). Nothing on CmdPal.
+Pomodoro / deadline timer — Omarchy has seven. CmdPal has zero. Countdown as a live Dock tile is the whole point.
+Docker containers — start/stop/logs/exec. Omarchy has Docker Monitor; CmdPal has nothing.
+Display profile manager — resolution/refresh/arrangement presets, DDC/CI brightness. CmdPal has SourceSwitch (inputs) and Toggle HDR only.
+Wallpaper switcher — per-monitor, scheduled, theme-linked (Omarchy: Backdrop, omawall, Auto Wallpaper, Theme Scheduler). CmdPal has Toggle Dark Mode and stops there.
+LAN scanner / endpoint monitor — Omarchy's IP Scan and OmaNetWatch. Ping sweep + port scan, or HTTP/TCP uptime checks on the Dock.
+CI status across repos — Omarchy's Pipelines and Omabench (every git project with dirty/branch state). CmdPal's GitHub extension covers issues/PRs but not "what's red right now across all my repos."
+Read aloud — selected text via Windows neural voices. Omarchy has it, CmdPal doesn't. Small, self-contained, good weekend build.
+Parcel tracking and Song identification (Shazam-style) — both exist on Omarchy, both absent from CmdPal, both fun.
+
 ## 15 August 2026
 
 
