@@ -1,3 +1,8 @@
+## 17 August 2026
+
+
+- 💡 life left bar. put birth year, expected death year and so percentabge bar on dock
+
 ## 16 August 2026
 
 
