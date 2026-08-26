@@ -1,3 +1,8 @@
+## 26 August 2026
+
+
+- 💡 app for best time to go out for walk to get maximum sun exposure. takes location and sends push
+
 ## 17 August 2026
 
 
