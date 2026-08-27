@@ -1,0 +1,17 @@
+{
+  "schema": 1,
+  "id": "20260827_231737",
+  "date": "2026-08-28T02:17:37+03:00",
+  "type": "note",
+  "source": "claude",
+  "text": "cv as webpage done. https://www.costafotiadis.com/resume/",
+  "tags": [
+    "web",
+    "life"
+  ],
+  "claude": {
+    "summary": "A resume page on costafotiadis.com with a downloadable PDF (Costa_Fotiadis_CV.pdf, updated 07/2026). This covers the \"cv as webpage on my site, allow download as pdf\" idea noted on 28 Jun.",
+    "model": "claude-fable-5",
+    "at": "2026-08-28T02:18:30+03:00"
+  }
+}

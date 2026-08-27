@@ -1,0 +1,18 @@
+{
+  "schema": 1,
+  "id": "20260827_231452",
+  "date": "2026-08-28T02:14:51+03:00",
+  "type": "idea",
+  "source": "claude",
+  "text": "something equivalent to the market extension for omarchy",
+  "tags": [
+    "linux",
+    "markets",
+    "app"
+  ],
+  "claude": {
+    "summary": "An Omarchy counterpart to the Markets Extension for Command Palette (https://github.com/CostaFot/MarketExtension): stock, crypto and currency data on the Omarchy desktop.",
+    "model": "claude-fable-5",
+    "at": "2026-08-28T02:16:00+03:00"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "schema": 1,
+  "id": "20260827_231609",
+  "date": "2026-08-28T02:16:09+03:00",
+  "type": "note",
+  "source": "claude",
+  "text": "done this. ADB Quick Commands — clear data, force-stop, screenshot, open deep link. https://github.com/CostaFot/AdbExtension",
+  "tags": [
+    "cmdpal",
+    "android"
+  ],
+  "claude": {
+    "summary": "ADB Extension for Command Palette is a Windows 11 PowerToys Command Palette extension exposing common adb operations for Android developers; it is on the Microsoft Store and WinGet, and has a companion blog post at costafotiadis.com. This covers the \"ADB Quick Commands\" idea noted on 10 Apr.",
+    "model": "claude-fable-5",
+    "at": "2026-08-28T02:17:00+03:00"
+  }
+}

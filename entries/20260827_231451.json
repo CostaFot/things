@@ -1,0 +1,18 @@
+{
+  "schema": 1,
+  "id": "20260827_231451",
+  "date": "2026-08-28T02:14:51+03:00",
+  "type": "note",
+  "source": "claude",
+  "text": "ive done market extension for cmd palette. repo here https://github.com/CostaFot/MarketExtension",
+  "text_raw": "ive done market extension for cmd pallete. repo here https://github.com/CostaFot/MarketExtension",
+  "tags": [
+    "cmdpal",
+    "markets"
+  ],
+  "claude": {
+    "summary": "Markets Extension for Command Palette is a Windows 11 PowerToys Command Palette extension for stock, crypto and currency data, using a Twelve Data or Finnhub API key; it is on the Microsoft Store and WinGet. This covers the \"cmd palette stocks extension\" idea noted on 10 Apr and 20 Jun.",
+    "model": "claude-fable-5",
+    "at": "2026-08-28T02:16:00+03:00"
+  }
+}

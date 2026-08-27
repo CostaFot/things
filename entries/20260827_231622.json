@@ -1,0 +1,18 @@
+{
+  "schema": 1,
+  "id": "20260827_231622",
+  "date": "2026-08-28T02:16:22+03:00",
+  "type": "idea",
+  "source": "claude",
+  "text": "adb extension as omarchy plugin too",
+  "tags": [
+    "linux",
+    "android",
+    "app"
+  ],
+  "claude": {
+    "summary": "An Omarchy counterpart to the ADB Extension for Command Palette (https://github.com/CostaFot/AdbExtension): common adb operations from the Omarchy desktop.",
+    "model": "claude-fable-5",
+    "at": "2026-08-28T02:17:30+03:00"
+  }
+}

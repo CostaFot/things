@@ -1,0 +1,14 @@
+{
+  "schema": 1,
+  "id": "20260827_231325",
+  "date": "2026-08-28T02:13:25+03:00",
+  "type": "note",
+  "source": "claude",
+  "text": "the quota extension is done. repo is here https://github.com/CostaFot/agents-panel-extension",
+  "tags": ["cmdpal", "ai"],
+  "claude": {
+    "summary": "Agents Panel for Command Palette is a Windows 11 PowerToys Command Palette extension that shows usage and quota for Claude Code, Codex, GitHub Copilot and opencode on the dock; it is published on the Microsoft Store. This closes the \"AI agent usage & quota\" gap from the 16 Aug CmdPal note.",
+    "model": "claude-fable-5",
+    "at": "2026-08-28T02:14:30+03:00"
+  }
+}
