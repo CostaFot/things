@@ -64,7 +64,8 @@ not about why it is interesting, no "interesting", "great", "fascinating".
 - `text` — required; may be `""` for a caption-less photo or a link sent with no comment.
 - `url` + `title` — required for `link`. `image` (repo path) — required for
   `photo`. `video` — required for `video`: `media/<id>.<mp4|webm|mov>`, a path
-  on the Railway volume, **not** in the repo. `preview` — optional, links
+  on the Railway volume, **not** in the repo; `poster` (`media/<id>.jpg`,
+  also on the volume) — optional, videos only. `preview` — optional, links
   only, `src` is a repo path.
 - `tags` — every tag must exist in `tags.json`. A new tag is allowed only
   when none fit, and it goes into `tags.json` in the same commit.
@@ -88,9 +89,11 @@ first, so a bad entry fails the deploy instead of rendering wrong.
   `capture.js --file` copies them to `images/<id>.<ext>`. Link previews are
   downloaded into `images/previews/<id>.<ext>` (max 1 MB, else skip). Do not
   hotlink.
-- Videos: too big for git. `capture.js --type video --file` copies the file
-  to `media/<id>.<ext>` (gitignored local mirror) and uploads it to the
-  Railway volume `media` (mounted at `/data` on the `things` service) with
+- Videos: too big for git. `capture.js --type video --file` transcodes the
+  file with ffmpeg to H.264/AAC mp4 with the index up front (phone HEVC does
+  not play in Chrome on Linux or Firefox), extracts a poster jpg, writes both
+  to `media/<id>.*` (gitignored local mirror) and uploads them to the Railway
+  volume `media` (mounted at `/data` on the `things` service) with
   `railway volume files upload`; `server.js` serves `/data/media/*` as
   `/media/*` with Range support. The upload needs the Railway CLI logged in
   with an SSH key registered (`railway ssh keys add`). The volume is the only

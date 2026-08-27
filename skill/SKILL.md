@@ -36,11 +36,13 @@ caption; text alongside the image is the caption. Never write a photo entry
 without a real file.
 
 Videos work the same way with `--type video` (`.mp4`, `.webm` or `.mov`).
-The file is *not* committed: `capture.js` copies it to `media/<id>.<ext>`
-(gitignored) and uploads it to the Railway volume `media` via
-`railway volume files upload` — this needs the Railway CLI logged in with an
-SSH key registered, which is the case on Costa's laptop. If the upload fails,
-no entry is written; report the error, do not retry with `--no-upload`.
+The file is *not* committed: `capture.js` transcodes it with ffmpeg to an
+H.264 mp4 (phone HEVC does not play everywhere), extracts a poster frame,
+writes both to `media/<id>.*` (gitignored) and uploads them to the Railway
+volume `media` via `railway volume files upload` — this needs ffmpeg and the
+Railway CLI logged in with an SSH key registered, which is the case on Costa's
+laptop. A 5 s 1080p clip takes ~10 s. If the upload fails, no entry is
+written; report the error, do not retry with `--no-upload`.
 
 ## Steps
 

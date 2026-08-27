@@ -49,7 +49,8 @@ function renderEntry(e) {
     body += `<a class="photo" href="/${attr(e.image)}"><img src="/${attr(e.image)}" alt="${attr(e.text)}" loading="lazy"></a>`;
   }
   if (e.type === "video") {
-    body += `<video class="video" src="/${attr(e.video)}" controls preload="metadata" playsinline></video>`;
+    const poster = e.poster ? ` poster="/${attr(e.poster)}"` : "";
+    body += `<video class="video" src="/${attr(e.video)}"${poster} controls preload="metadata" playsinline></video>`;
   }
   body += `<p class="text">${richText(e.text)}</p>`;
   if (e.claude) {
@@ -92,7 +93,7 @@ function renderFeed(entries) {
     let html = "";
     if (e.type === "link") html += `<p><a href="${attr(e.url)}">${esc(e.title)}</a> <small>${esc(domainOf(e.url))}</small></p>`;
     if (e.type === "photo") html += `<p><img src="${SITE}/${attr(e.image)}" alt="${attr(e.text)}"></p>`;
-    if (e.type === "video") html += `<p><a href="${SITE}/${attr(e.video)}">▶ video</a></p>`;
+    if (e.type === "video") html += `<p><a href="${SITE}/${attr(e.video)}">${e.poster ? `<img src="${SITE}/${attr(e.poster)}" alt="${attr(e.text)}">` : "▶ video"}</a></p>`;
     if (e.text) html += `<p>${richText(e.text).replace(/\n/g, "<br>")}</p>`;
     if (e.claude) html += `<p><em>claude:</em> ${richText(e.claude.summary)}</p>`;
     return `  <item>

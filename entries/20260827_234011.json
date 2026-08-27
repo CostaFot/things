@@ -5,6 +5,7 @@
   "type": "video",
   "source": "claude",
   "text": "test cat!",
+  "poster": "media/20260827_234011.jpg",
   "video": "media/20260827_234011.mp4",
   "tags": [
     "life"

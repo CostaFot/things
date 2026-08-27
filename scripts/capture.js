@@ -6,9 +6,12 @@
 //   node scripts/capture.js --type photo --file /path/to.jpg [--text "caption"]
 //   node scripts/capture.js --type video --file /path/to.mp4 [--text "caption"]
 // Options: --no-fetch (skip title/preview), --date ISO (override, must carry an offset),
-//          --no-upload (video: keep the local media/ copy only, skip the Railway upload)
-// Videos are not committed: the file is copied to media/<id>.<ext> (gitignored
-// mirror) and uploaded to the Railway volume with `railway volume files upload`.
+//          --no-upload (video: keep the local media/ copy only, skip the Railway upload),
+//          --no-transcode (video: store the file as-is, no poster)
+// Videos are not committed: the file is transcoded with ffmpeg to H.264/AAC
+// (phone HEVC does not play in Chrome on Linux or in Firefox) with the index up
+// front, a poster frame is extracted, both land in media/<id>.* (gitignored
+// mirror) and are uploaded to the Railway volume with `railway volume files upload`.
 // Prints the path of the written file, then the entry JSON. Exits 1 on any problem.
 const fs = require("node:fs");
 const path = require("node:path");
@@ -26,6 +29,26 @@ const RAILWAY = {
 };
 const VIDEO_EXT = [".mp4", ".webm", ".mov"];
 
+function hasFfmpeg() {
+  return spawnSync("ffmpeg", ["-version"], { stdio: "ignore" }).status === 0;
+}
+
+// H.264 High + AAC in an mp4 with the moov atom first; max 1920 px wide,
+// even dimensions, rotation metadata baked in. Returns nothing, throws on failure.
+function transcode(from, to) {
+  const r = spawnSync("ffmpeg", ["-y", "-hide_banner", "-loglevel", "error", "-i", from,
+    "-map", "0:v:0", "-map", "0:a:0?", "-c:v", "libx264", "-preset", "medium", "-crf", "23", "-pix_fmt", "yuv420p",
+    "-vf", "scale='min(1920,iw)':-2", "-c:a", "aac", "-b:a", "128k", "-ac", "2",
+    "-movflags", "+faststart", to], { encoding: "utf8", stdio: ["ignore", "ignore", "pipe"] });
+  if (r.status !== 0) throw new Error(`ffmpeg transcode failed: ${r.stderr.trim()}`);
+}
+
+function poster(from, to) {
+  const r = spawnSync("ffmpeg", ["-y", "-hide_banner", "-loglevel", "error", "-ss", "0.5", "-i", from,
+    "-frames:v", "1", "-vf", "scale='min(1280,iw)':-2", "-q:v", "4", to], { encoding: "utf8", stdio: ["ignore", "ignore", "pipe"] });
+  if (r.status !== 0) throw new Error(`ffmpeg poster failed: ${r.stderr.trim()}`);
+}
+
 function uploadToVolume(local, remote) {
   const argv = ["volume", "-p", RAILWAY.project, "-s", RAILWAY.service, "-e", RAILWAY.env,
     "files", "--volume", RAILWAY.volume, "upload", local, remote, "--json"];
@@ -42,6 +65,7 @@ function args() {
     const k = a[i].slice(2);
     if (k === "no-fetch") { o.noFetch = true; continue; }
     if (k === "no-upload") { o.noUpload = true; continue; }
+    if (k === "no-transcode") { o.noTranscode = true; continue; }
     o[k] = a[++i];
     if (o[k] === undefined) throw new Error(`--${k} needs a value`);
   }
@@ -105,25 +129,38 @@ async function main() {
     e.image = rel;
   }
 
-  let upload = null;
+  const uploads = [];
   if (type === "video") {
     const from = path.resolve(o.file);
     if (!fs.existsSync(from)) throw new Error(`no such file: ${from}`);
-    const ext = path.extname(from).toLowerCase();
-    if (!VIDEO_EXT.includes(ext)) throw new Error(`unsupported video type: ${ext} (want ${VIDEO_EXT.join("|")})`);
-    const rel = `media/${id}${ext}`;
+    const srcExt = path.extname(from).toLowerCase();
+    if (!VIDEO_EXT.includes(srcExt)) throw new Error(`unsupported video type: ${srcExt} (want ${VIDEO_EXT.join("|")})`);
+    fs.mkdirSync(path.join(ROOT, "media"), { recursive: true });
+    const doTranscode = !o.noTranscode && hasFfmpeg();
+    if (!doTranscode && !o.noTranscode) console.error("warning: ffmpeg not found, storing the video as-is (may not play in every browser)");
+    const rel = `media/${id}${doTranscode ? ".mp4" : srcExt}`;
     const to = path.join(ROOT, rel);
-    fs.mkdirSync(path.dirname(to), { recursive: true });
-    if (from !== to) fs.copyFileSync(from, to);
+    if (doTranscode) {
+      console.error(`transcoding ${path.basename(from)} -> ${rel} …`);
+      transcode(from, to);
+      const posterRel = `media/${id}.jpg`;
+      poster(to, path.join(ROOT, posterRel));
+      e.poster = posterRel;
+      uploads.push({ local: path.join(ROOT, posterRel), remote: `/${posterRel}` });
+    } else if (from !== to) {
+      fs.copyFileSync(from, to);
+    }
     e.video = rel;
-    upload = { local: to, remote: `/${rel}`, bytes: fs.statSync(to).size };
+    uploads.push({ local: to, remote: `/${rel}` });
   }
 
   const errs = validateEntry(e, `${id}.json`, loadTags());
   if (errs.length) throw new Error(`invalid entry: ${errs.join("; ")}`);
-  if (upload && !o.noUpload) {
-    console.error(`uploading ${(upload.bytes / 1e6).toFixed(1)} MB to railway volume ${RAILWAY.volume}:${upload.remote} …`);
-    uploadToVolume(upload.local, upload.remote);
+  if (!o.noUpload) {
+    for (const u of uploads) {
+      console.error(`uploading ${(fs.statSync(u.local).size / 1e6).toFixed(1)} MB to railway volume ${RAILWAY.volume}:${u.remote} …`);
+      uploadToVolume(u.local, u.remote);
+    }
   }
   const file = path.join(ENTRIES, `${id}.json`);
   fs.writeFileSync(file, JSON.stringify(e, null, 2) + "\n");

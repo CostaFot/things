@@ -8,12 +8,13 @@ const ENTRIES = path.join(ROOT, "entries");
 const TYPES = new Set(["idea", "note", "link", "photo", "video"]);
 // Videos live on the Railway volume, not in git: media/<id>.<ext>, served at /media/.
 const VIDEO_RE = /^media\/\d{8}_\d{6}(_\d+)?\.(mp4|webm|mov)$/;
+const POSTER_RE = /^media\/\d{8}_\d{6}(_\d+)?\.jpg$/;
 const SOURCES = new Set(["claude", "telegram"]);
 const ID_RE = /^\d{8}_\d{6}(_\d+)?$/;
 const DATE_RE = /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}[+-]\d{2}:\d{2}$/;
 const KNOWN_KEYS = new Set([
   "schema", "id", "date", "type", "source", "text", "text_raw", "url", "title",
-  "image", "video", "preview", "tags", "claude", "migrated", "date_precision",
+  "image", "video", "poster", "preview", "tags", "claude", "migrated", "date_precision",
 ]);
 
 function loadTags() {
@@ -59,8 +60,9 @@ function validateEntry(e, file, tags) {
   if (e.type === "video") {
     need(typeof e.video === "string" && VIDEO_RE.test(e.video), "video needs video: media/<id>.(mp4|webm|mov)");
     if (typeof e.video === "string") need(e.video.startsWith(`media/${e.id}.`), `video path must be named after the id (${e.id})`);
+    if (e.poster !== undefined) need(typeof e.poster === "string" && POSTER_RE.test(e.poster) && e.poster === `media/${e.id}.jpg`, "poster must be media/<id>.jpg");
   } else {
-    need(e.video === undefined, "video only allowed on video");
+    need(e.video === undefined && e.poster === undefined, "video/poster only allowed on video");
   }
 
   if (e.preview !== undefined) {
