@@ -5,5 +5,9 @@
   "type": "idea",
   "source": "telegram",
   "text": "video about ANRs due to not switching dispatchers",
+  "tags": [
+    "blog",
+    "android"
+  ],
   "migrated": true
 }

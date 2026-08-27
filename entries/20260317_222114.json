@@ -7,5 +7,13 @@
   "text": "linkedin speak translator 😂",
   "url": "https://news.ycombinator.com/item?id=47408703",
   "title": "Kagi Translate now supports LinkedIn Speak as an output language | Hacker News",
+  "tags": [
+    "tools"
+  ],
+  "claude": {
+    "summary": "Hacker News thread on Kagi Translate adding \"LinkedIn Speak\" as an output language, a joke feature that rewrites text in the style of a LinkedIn post.",
+    "model": "claude-fable-5",
+    "at": "2026-08-28T01:53:42+03:00"
+  },
   "migrated": true
 }

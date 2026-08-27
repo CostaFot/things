@@ -7,9 +7,12 @@
   "text": "",
   "url": "https://youtu.be/8ErL9-sHB48?si=UUfwU9MZcYknMG_g",
   "title": "This Scares Me - Are You Ready For What's Next?",
-  "migrated": true,
   "preview": {
     "src": "images/previews/20260330_175101.jpg",
     "origin": "https://i.ytimg.com/vi/8ErL9-sHB48/hqdefault.jpg"
-  }
+  },
+  "tags": [
+    "video"
+  ],
+  "migrated": true
 }

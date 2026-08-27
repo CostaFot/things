@@ -4,12 +4,16 @@
   "date": "2026-03-18T00:16:51+02:00",
   "type": "link",
   "source": "telegram",
-  "text": "cheking twitter link and additional comment",
+  "text": "checking twitter link and additional comment",
+  "text_raw": "cheking twitter link and additional comment",
   "url": "https://x.com/markasduplicate",
   "title": "Costa (@markasduplicate) on X",
-  "migrated": true,
   "preview": {
     "src": "images/previews/20260317_221651.jpg",
     "origin": "https://pbs.twimg.com/profile_images/2034361255809400832/FoJzllaa_200x200.jpg"
-  }
+  },
+  "tags": [
+    "life"
+  ],
+  "migrated": true
 }

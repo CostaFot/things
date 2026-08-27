@@ -7,9 +7,17 @@
   "text": "",
   "url": "https://dev.to/webdeasy/top-20-css-buttons-animations-f41",
   "title": "Button Animation CSS: 75 beautiful CSS Buttons - DEV Community",
-  "migrated": true,
   "preview": {
     "src": "images/previews/20260325_072144.webp",
     "origin": "https://media2.dev.to/dynamic/image/width=1000,height=500,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fthepracticaldev.s3.amazonaws.com%2Fi%2Fd84ms0vtyzda589mhow6.jpg"
-  }
+  },
+  "tags": [
+    "web"
+  ],
+  "claude": {
+    "summary": "A DEV Community roundup of CSS button animation examples with code.",
+    "model": "claude-fable-5",
+    "at": "2026-08-28T01:53:42+03:00"
+  },
+  "migrated": true
 }

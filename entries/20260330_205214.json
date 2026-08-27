@@ -5,5 +5,9 @@
   "type": "idea",
   "source": "telegram",
   "text": "build a CMP desktop app for activity monitor. make it memeable",
+  "tags": [
+    "app",
+    "android"
+  ],
   "migrated": true
 }

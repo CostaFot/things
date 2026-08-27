@@ -4,6 +4,11 @@
   "date": "2026-06-28T12:10:17+01:00",
   "type": "idea",
   "source": "telegram",
-  "text": "cv as webpage on my site. allow downloade as pdf",
+  "text": "cv as webpage on my site. allow download as pdf",
+  "text_raw": "cv as webpage on my site. allow downloade as pdf",
+  "tags": [
+    "web",
+    "life"
+  ],
   "migrated": true
 }

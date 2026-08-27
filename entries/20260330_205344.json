@@ -7,9 +7,17 @@
   "text": "",
   "url": "https://simonwillison.net/2026/Mar/27/vibe-coding-swiftui/",
   "title": "Vibe coding SwiftUI apps is a lot of fun",
-  "migrated": true,
   "preview": {
     "src": "images/previews/20260330_205344.jpg",
     "origin": "https://static.simonwillison.net/static/2026/gpuer-card.jpg"
-  }
+  },
+  "tags": [
+    "ai"
+  ],
+  "claude": {
+    "summary": "Simon Willison on building small SwiftUI apps with AI coding tools despite not being a Swift developer.",
+    "model": "claude-fable-5",
+    "at": "2026-08-28T01:53:42+03:00"
+  },
+  "migrated": true
 }

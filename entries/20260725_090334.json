@@ -5,5 +5,9 @@
   "type": "idea",
   "source": "telegram",
   "text": "blog about loading stuff at VM init and that there is nothing wrong with that and how to unit test simply",
+  "tags": [
+    "blog",
+    "android"
+  ],
   "migrated": true
 }

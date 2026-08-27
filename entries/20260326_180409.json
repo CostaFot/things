@@ -5,5 +5,9 @@
   "type": "idea",
   "source": "telegram",
   "text": "windows pricing blog",
+  "tags": [
+    "blog",
+    "windows"
+  ],
   "migrated": true
 }

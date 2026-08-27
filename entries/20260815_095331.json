@@ -4,6 +4,11 @@
   "date": "2026-08-15T10:53:31+01:00",
   "type": "idea",
   "source": "telegram",
-  "text": "blog with all my projects and few words about them. keep it brief, mainly showcase and links. if I have written an dedicated blog post link to that too",
+  "text": "blog with all my projects and few words about them. keep it brief, mainly showcase and links. if I have written a dedicated blog post link to that too",
+  "text_raw": "blog with all my projects and few words about them. keep it brief, mainly showcase and links. if I have written an dedicated blog post link to that too",
+  "tags": [
+    "blog",
+    "web"
+  ],
   "migrated": true
 }

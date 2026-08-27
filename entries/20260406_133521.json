@@ -7,9 +7,18 @@
   "text": "",
   "url": "https://youtu.be/Ch57gsOLcbo?si=10K3PO3GDlqGFoAL",
   "title": "The Fastest Way To Learn Godot is to Learn Pico-8 (Beginner’s Guide)",
-  "migrated": true,
   "preview": {
     "src": "images/previews/20260406_133521.jpg",
     "origin": "https://i.ytimg.com/vi/Ch57gsOLcbo/hqdefault.jpg"
-  }
+  },
+  "tags": [
+    "video",
+    "gamedev"
+  ],
+  "claude": {
+    "summary": "A beginner-oriented video on learning the Godot engine by starting with Pico-8, the fantasy console.",
+    "model": "claude-fable-5",
+    "at": "2026-08-28T01:53:42+03:00"
+  },
+  "migrated": true
 }

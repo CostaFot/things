@@ -7,9 +7,17 @@
   "text": "berry cool",
   "url": "https://youtu.be/D2eLCE2-64I?si=ogwj4Qk03VtOXsTI",
   "title": "DEMOCRAWLER // Stellar Blade OST by original singer Pernelle.",
-  "migrated": true,
   "preview": {
     "src": "images/previews/20260415_174827.jpg",
     "origin": "https://i.ytimg.com/vi/D2eLCE2-64I/hqdefault.jpg"
-  }
+  },
+  "tags": [
+    "video"
+  ],
+  "claude": {
+    "summary": "A performance of DEMOCRAWLER from the Stellar Blade soundtrack by Pernelle, the track's original singer.",
+    "model": "claude-fable-5",
+    "at": "2026-08-28T01:53:42+03:00"
+  },
+  "migrated": true
 }

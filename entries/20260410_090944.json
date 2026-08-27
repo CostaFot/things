@@ -5,5 +5,9 @@
   "type": "idea",
   "source": "telegram",
   "text": "command palette ADB Quick Commands — run common adb commands (clear app data, force-stop, take screenshot, open deep link) without touching a terminal",
+  "tags": [
+    "cmdpal",
+    "android"
+  ],
   "migrated": true
 }

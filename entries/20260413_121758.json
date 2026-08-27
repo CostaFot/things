@@ -5,5 +5,10 @@
   "type": "idea",
   "source": "telegram",
   "text": "chrome extension bookmark side bar on hover",
+  "tags": [
+    "app",
+    "web",
+    "tools"
+  ],
   "migrated": true
 }

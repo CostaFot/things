@@ -5,5 +5,9 @@
   "type": "idea",
   "source": "telegram",
   "text": "blog about autohotkey window tiling",
+  "tags": [
+    "blog",
+    "windows"
+  ],
   "migrated": true
 }

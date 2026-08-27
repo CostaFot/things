@@ -5,5 +5,9 @@
   "type": "idea",
   "source": "telegram",
   "text": "write blog how to auto-refresh blog list with this workflow https://github.com/CostaFot/CostaFot/blob/main/.github/workflows/blog-post-workflow.yml",
+  "tags": [
+    "blog",
+    "web"
+  ],
   "migrated": true
 }

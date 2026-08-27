@@ -5,5 +5,8 @@
   "type": "note",
   "source": "telegram",
   "text": "signpost",
+  "tags": [
+    "life"
+  ],
   "migrated": true
 }

@@ -1,7 +1,7 @@
 {
   "android": "Android, Kotlin, Compose, mobile dev",
   "ai": "AI tools, agents, models, working with them",
-  "blog": "an idea for a blog post",
+  "blog": "the blog: post ideas, content ideas, site milestones",
   "cmdpal": "Windows Command Palette extensions",
   "linux": "Linux desktop, Omarchy, Ubuntu",
   "windows": "Windows setup and tooling",
@@ -11,5 +11,6 @@
   "markets": "stocks, crypto, fear & greed",
   "gamedev": "Godot, Pico-8, games",
   "life": "personal, milestones, photos, random",
-  "tools": "apps, CLIs, dev tools"
+  "tools": "apps, CLIs, dev tools",
+  "app": "an app or extension idea"
 }

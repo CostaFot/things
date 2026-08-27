@@ -5,5 +5,8 @@
   "type": "idea",
   "source": "telegram",
   "text": "deeplinking in compose",
+  "tags": [
+    "android"
+  ],
   "migrated": true
 }

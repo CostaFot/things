@@ -5,5 +5,9 @@
   "type": "idea",
   "source": "telegram",
   "text": "app for best time to go out for walk to get maximum sun exposure. takes location and sends push",
+  "tags": [
+    "app",
+    "life"
+  ],
   "migrated": true
 }

@@ -7,9 +7,18 @@
   "text": "",
   "url": "https://youtu.be/QKgTZWbwD1U?si=AqQIdLFUr5GOLrnx",
   "title": "Godot in 100 Seconds",
-  "migrated": true,
   "preview": {
     "src": "images/previews/20260406_130326.jpg",
     "origin": "https://i.ytimg.com/vi/QKgTZWbwD1U/hqdefault.jpg"
-  }
+  },
+  "tags": [
+    "video",
+    "gamedev"
+  ],
+  "claude": {
+    "summary": "Fireship's 100-second overview of the Godot game engine.",
+    "model": "claude-fable-5",
+    "at": "2026-08-28T01:53:42+03:00"
+  },
+  "migrated": true
 }

@@ -5,5 +5,9 @@
   "type": "idea",
   "source": "telegram",
   "text": "cmd palette stocks extension",
+  "tags": [
+    "cmdpal",
+    "markets"
+  ],
   "migrated": true
 }

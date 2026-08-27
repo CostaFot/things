@@ -5,5 +5,8 @@
   "type": "idea",
   "source": "telegram",
   "text": "cmd palette extension - inappropriate clippy. walks around on the dock, random speech bubble saying stuff. extra functionality could be RAM/CPU usage related puns or memes",
+  "tags": [
+    "cmdpal"
+  ],
   "migrated": true
 }

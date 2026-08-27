@@ -7,5 +7,14 @@
   "text": "try this out",
   "url": "https://zacsweers.github.io/metro/latest/",
   "title": "Metro",
+  "tags": [
+    "android",
+    "tools"
+  ],
+  "claude": {
+    "summary": "Metro is a compile-time dependency injection framework for Kotlin by Zac Sweers, implemented as a Kotlin compiler plugin, in the lineage of Dagger, Anvil and kotlin-inject.",
+    "model": "claude-fable-5",
+    "at": "2026-08-28T01:53:42+03:00"
+  },
   "migrated": true
 }

@@ -5,5 +5,8 @@
   "type": "note",
   "source": "telegram",
   "text": "read book Robert Kuok: A Memoir",
+  "tags": [
+    "book"
+  ],
   "migrated": true
 }

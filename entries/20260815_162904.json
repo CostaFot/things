@@ -5,5 +5,9 @@
   "type": "idea",
   "source": "telegram",
   "text": "url uptime extension. give it a url and it pings it periodically and shows on dock if up/down",
+  "tags": [
+    "cmdpal",
+    "tools"
+  ],
   "migrated": true
 }

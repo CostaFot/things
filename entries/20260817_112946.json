@@ -4,6 +4,11 @@
   "date": "2026-08-17T12:29:46+01:00",
   "type": "idea",
   "source": "telegram",
-  "text": "life left bar. put birth year, expected death year and so percentabge bar on dock",
+  "text": "life left bar. put birth year, expected death year and so percentage bar on dock",
+  "text_raw": "life left bar. put birth year, expected death year and so percentabge bar on dock",
+  "tags": [
+    "cmdpal",
+    "life"
+  ],
   "migrated": true
 }

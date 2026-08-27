@@ -5,5 +5,9 @@
   "type": "idea",
   "source": "telegram",
   "text": "fear and greed dock",
+  "tags": [
+    "cmdpal",
+    "markets"
+  ],
   "migrated": true
 }

@@ -5,5 +5,9 @@
   "type": "note",
   "source": "telegram",
   "text": "need to make my share buttons mobile friendly",
+  "tags": [
+    "web",
+    "blog"
+  ],
   "migrated": true
 }

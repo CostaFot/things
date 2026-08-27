@@ -5,5 +5,9 @@
   "type": "idea",
   "source": "telegram",
   "text": "write blog about the most common gadgets and things that I use",
+  "tags": [
+    "blog",
+    "life"
+  ],
   "migrated": true
 }

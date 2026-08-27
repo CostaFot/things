@@ -7,9 +7,18 @@
   "text": "",
   "url": "https://youtu.be/1CSGykPtNAM?si=4O6f6Bredv0M-lVz",
   "title": "Oppo Find N6 Review: Likely Best Foldable of 2026",
-  "migrated": true,
   "preview": {
     "src": "images/previews/20260317_215616.jpg",
     "origin": "https://i.ytimg.com/vi/1CSGykPtNAM/hqdefault.jpg"
-  }
+  },
+  "tags": [
+    "video",
+    "android"
+  ],
+  "claude": {
+    "summary": "A review of the Oppo Find N6 foldable phone.",
+    "model": "claude-fable-5",
+    "at": "2026-08-28T01:53:42+03:00"
+  },
+  "migrated": true
 }

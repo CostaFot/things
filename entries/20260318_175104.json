@@ -4,8 +4,17 @@
   "date": "2026-03-18T19:51:04+02:00",
   "type": "link",
   "source": "telegram",
-  "text": "wild times 😂. What made it particularly brutal socially: active investors had reached 1.5 million  in a country of ~10 million people. Basically every family had someone in the market.",
+  "text": "wild times 😂. What made it particularly brutal socially: active investors had reached 1.5 million in a country of ~10 million people. Basically every family had someone in the market.",
+  "text_raw": "wild times 😂. What made it particularly brutal socially: active investors had reached 1.5 million  in a country of ~10 million people. Basically every family had someone in the market.",
   "url": "https://en.wikipedia.org/wiki/1999_Greek_stock_market_crash",
   "title": "1999 Greek stock market crash - Wikipedia",
+  "tags": [
+    "markets"
+  ],
+  "claude": {
+    "summary": "Wikipedia on the Athens Stock Exchange bubble: the general index rose several-fold through 1998–99, peaked in September 1999 and then fell for years, wiping out a large share of Greek retail investors.",
+    "model": "claude-fable-5",
+    "at": "2026-08-28T01:53:42+03:00"
+  },
   "migrated": true
 }

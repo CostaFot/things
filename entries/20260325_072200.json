@@ -6,6 +6,14 @@
   "source": "telegram",
   "text": "",
   "url": "https://dribbble.com/shots/1648026-Animated-buttons",
-  "title": "dribbble.com",
+  "title": "Animated buttons — Dribbble",
+  "tags": [
+    "web"
+  ],
+  "claude": {
+    "summary": "A Dribbble shot showing a set of animated button designs.",
+    "model": "claude-fable-5",
+    "at": "2026-08-28T01:53:42+03:00"
+  },
   "migrated": true
 }

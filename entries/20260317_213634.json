@@ -5,5 +5,8 @@
   "type": "note",
   "source": "telegram",
   "text": "testing new categories. this should have the speech bubble emote",
+  "tags": [
+    "life"
+  ],
   "migrated": true
 }

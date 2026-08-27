@@ -5,5 +5,9 @@
   "type": "idea",
   "source": "telegram",
   "text": "anti slop app that uses gemma 4 to screenshot current screen, extract the relevant post and send it to pangra for slop AI check",
+  "tags": [
+    "app",
+    "ai"
+  ],
   "migrated": true
 }
