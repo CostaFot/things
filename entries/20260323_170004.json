@@ -1,0 +1,9 @@
+{
+  "schema": 1,
+  "id": "20260323_170004",
+  "date": "2026-03-23T19:00:04+02:00",
+  "type": "idea",
+  "source": "telegram",
+  "text": "write blog how to auto-refresh blog list with this workflow https://github.com/CostaFot/CostaFot/blob/main/.github/workflows/blog-post-workflow.yml",
+  "migrated": true
+}

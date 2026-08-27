@@ -1,0 +1,15 @@
+{
+  "schema": 1,
+  "id": "20260330_205344",
+  "date": "2026-03-30T23:53:44+03:00",
+  "type": "link",
+  "source": "telegram",
+  "text": "",
+  "url": "https://simonwillison.net/2026/Mar/27/vibe-coding-swiftui/",
+  "title": "Vibe coding SwiftUI apps is a lot of fun",
+  "migrated": true,
+  "preview": {
+    "src": "images/previews/20260330_205344.jpg",
+    "origin": "https://static.simonwillison.net/static/2026/gpuer-card.jpg"
+  }
+}

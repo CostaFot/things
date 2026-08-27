@@ -1,0 +1,9 @@
+{
+  "schema": 1,
+  "id": "20260815_162904",
+  "date": "2026-08-15T17:29:04+01:00",
+  "type": "idea",
+  "source": "telegram",
+  "text": "url uptime extension. give it a url and it pings it periodically and shows on dock if up/down",
+  "migrated": true
+}

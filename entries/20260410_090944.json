@@ -1,0 +1,9 @@
+{
+  "schema": 1,
+  "id": "20260410_090944",
+  "date": "2026-04-10T12:09:44+03:00",
+  "type": "idea",
+  "source": "telegram",
+  "text": "command palette ADB Quick Commands — run common adb commands (clear app data, force-stop, take screenshot, open deep link) without touching a terminal",
+  "migrated": true
+}

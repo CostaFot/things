@@ -1,0 +1,24 @@
+{
+  "schema": 1,
+  "id": "20260322_175031",
+  "date": "2026-03-22T19:50:31+02:00",
+  "type": "link",
+  "source": "telegram",
+  "text": "tried out omakub. some tinkering involved to make things work but not bad at all.",
+  "url": "https://omakub.org/",
+  "title": "Omakub — An Omakase Developer Setup for Ubuntu 24.04+ by DHH",
+  "migrated": true,
+  "preview": {
+    "src": "images/previews/20260322_175031.png",
+    "origin": "https://omakub.org/assets/images/opengraph.png"
+  },
+  "tags": [
+    "linux",
+    "tools"
+  ],
+  "claude": {
+    "summary": "Omakub is DHH's one-command developer setup for Ubuntu 24.04: it installs a curated set of apps, themes, fonts and dev tooling on top of a fresh install. It is the Ubuntu predecessor of Omarchy.",
+    "model": "claude-fable-5",
+    "at": "2026-08-28T02:10:00+01:00"
+  }
+}

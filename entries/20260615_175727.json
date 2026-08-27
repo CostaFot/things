@@ -1,0 +1,9 @@
+{
+  "schema": 1,
+  "id": "20260615_175727",
+  "date": "2026-06-15T20:57:27+03:00",
+  "type": "idea",
+  "source": "telegram",
+  "text": "anti slop app that uses gemma 4 to screenshot current screen, extract the relevant post and send it to pangra for slop AI check",
+  "migrated": true
+}

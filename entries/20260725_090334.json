@@ -1,0 +1,9 @@
+{
+  "schema": 1,
+  "id": "20260725_090334",
+  "date": "2026-07-25T10:03:34+01:00",
+  "type": "idea",
+  "source": "telegram",
+  "text": "blog about loading stuff at VM init and that there is nothing wrong with that and how to unit test simply",
+  "migrated": true
+}

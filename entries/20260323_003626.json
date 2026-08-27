@@ -1,0 +1,9 @@
+{
+  "schema": 1,
+  "id": "20260323_003626",
+  "date": "2026-03-23T02:36:26+02:00",
+  "type": "idea",
+  "source": "telegram",
+  "text": "right about migrating from github json to database for claps api",
+  "migrated": true
+}

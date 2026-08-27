@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>things — Costa Fotiadis</title>
+<meta name="description" content="Links, ideas, notes and photos Costa sends himself. Newest first.">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="alternate" type="application/rss+xml" title="things" href="/feed.xml">
+<link rel="canonical" href="{{SITE}}/">
+<meta property="og:title" content="things — Costa Fotiadis">
+<meta property="og:description" content="Links, ideas, notes and photos Costa sends himself. Newest first.">
+<meta property="og:url" content="{{SITE}}/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+{{CSS}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="head">
+    <h1><a href="/">things</a></h1>
+    <p>Links, ideas, notes and photos I send myself from my phone. Newest first. Anything marked <span style="color:var(--accent)">claude</span> was added by the agent, not me.</p>
+    <nav>
+      <a href="https://www.costafotiadis.com">costafotiadis.com</a>
+      <a href="/feed.xml">rss</a>
+      <a href="https://github.com/CostaFot/things">source</a>
+      <span>{{COUNT}} things</span>
+    </nav>
+  </header>
+
+  <ul class="tags" id="tags" aria-label="Filter by tag">
+{{TAGS}}
+  </ul>
+
+  <main id="feed">
+{{DAYS}}
+  </main>
+  <p class="empty" id="empty" hidden>Nothing tagged like that yet.</p>
+
+  <footer class="foot">
+    <span>built {{BUILT}}</span>
+    <a href="https://www.costafotiadis.com">Costa Fotiadis</a>
+  </footer>
+</div>
+<script>
+(function () {
+  var tags = document.getElementById("tags");
+  var buttons = tags.querySelectorAll("button");
+  var entries = document.querySelectorAll(".entry");
+  var days = document.querySelectorAll(".day");
+  var empty = document.getElementById("empty");
+
+  function apply(tag) {
+    var shown = 0;
+    entries.forEach(function (e) {
+      var ok = !tag || (" " + (e.getAttribute("data-tags") || "") + " ").indexOf(" " + tag + " ") >= 0;
+      e.hidden = !ok; if (ok) shown++;
+    });
+    days.forEach(function (d) { d.hidden = !d.querySelector(".entry:not([hidden])"); });
+    buttons.forEach(function (b) { b.setAttribute("aria-pressed", String((b.getAttribute("data-tag") || "") === (tag || ""))); });
+    empty.hidden = shown > 0;
+  }
+  function fromHash() {
+    var m = /^#tag=([\w-]+)$/.exec(location.hash);
+    apply(m ? m[1] : "");
+  }
+  tags.addEventListener("click", function (ev) {
+    var b = ev.target.closest("button"); if (!b) return;
+    var t = b.getAttribute("data-tag") || "";
+    if (t) history.replaceState(null, "", "#tag=" + t); else history.replaceState(null, "", location.pathname);
+    apply(t);
+  });
+  window.addEventListener("hashchange", fromHash);
+  fromHash();
+})();
+</script>
+</body>
+</html>
