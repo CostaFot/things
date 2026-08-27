@@ -1,0 +1,23 @@
+{
+  "schema": 1,
+  "id": "20260827_230940",
+  "date": "2026-08-28T02:09:40+03:00",
+  "type": "link",
+  "source": "claude",
+  "text": "trying my bot out. memories BTW",
+  "url": "https://youtu.be/c7jvWOfwc1M?si=35pKhqOCNYbPGJbL",
+  "title": "Goku Goes Super Saiyan for the First Time | Dragon Ball Z",
+  "preview": {
+    "src": "images/previews/20260827_230940.jpg",
+    "origin": "https://i.ytimg.com/vi/c7jvWOfwc1M/hqdefault.jpg"
+  },
+  "tags": [
+    "video",
+    "life"
+  ],
+  "claude": {
+    "summary": "A clip from Dragon Ball Z of Goku transforming into a Super Saiyan for the first time, during his fight with Frieza on Namek.",
+    "model": "claude-fable-5",
+    "at": "2026-08-28T02:09:47+03:00"
+  }
+}
