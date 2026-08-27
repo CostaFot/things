@@ -1,8 +1,9 @@
 # things — agent guide
 
-This repo is Costa's "things" feed: links, ideas, notes and photos, one JSON
-file per entry, rendered as a static site at https://things.costafotiadis.com.
-Git is the database. **Every push to `main` deploys** (Railway project
+This repo is Costa's "things" feed: links, ideas, notes, photos and videos,
+one JSON file per entry, rendered as a static site at
+https://things.costafotiadis.com. Git is the database — except video files,
+which live on a Railway volume (see below). **Every push to `main` deploys** (Railway project
 `things-bot`, service `things`, generated domain
 things-production-f67b.up.railway.app).
 
@@ -55,13 +56,16 @@ not about why it is interesting, no "interesting", "great", "fascinating".
   basename.
 - `date` — local wall-clock time **with offset** (`+01:00`), never `Z`. The
   site groups by the date part of this string.
-- `type` — `idea` | `note` | `link` | `photo`. A YouTube link is a `link`; the
-  build derives the thumbnail and icon from the URL.
+- `type` — `idea` | `note` | `link` | `photo` | `video`. A YouTube link is a
+  `link`; the build derives the thumbnail and icon from the URL. `video` is a
+  file Costa recorded, not a link to one.
 - `source` — `claude`, or `telegram` on entries migrated from the old bot
   (those also carry `"migrated": true`).
 - `text` — required; may be `""` for a caption-less photo or a link sent with no comment.
 - `url` + `title` — required for `link`. `image` (repo path) — required for
-  `photo`. `preview` — optional, links only, `src` is a repo path.
+  `photo`. `video` — required for `video`: `media/<id>.<mp4|webm|mov>`, a path
+  on the Railway volume, **not** in the repo. `preview` — optional, links
+  only, `src` is a repo path.
 - `tags` — every tag must exist in `tags.json`. A new tag is allowed only
   when none fit, and it goes into `tags.json` in the same commit.
 
@@ -84,6 +88,16 @@ first, so a bad entry fails the deploy instead of rendering wrong.
   `capture.js --file` copies them to `images/<id>.<ext>`. Link previews are
   downloaded into `images/previews/<id>.<ext>` (max 1 MB, else skip). Do not
   hotlink.
+- Videos: too big for git. `capture.js --type video --file` copies the file
+  to `media/<id>.<ext>` (gitignored local mirror) and uploads it to the
+  Railway volume `media` (mounted at `/data` on the `things` service) with
+  `railway volume files upload`; `server.js` serves `/data/media/*` as
+  `/media/*` with Range support. The upload needs the Railway CLI logged in
+  with an SSH key registered (`railway ssh keys add`). The volume is the only
+  copy that matters — `git revert` of a video entry does not delete the file;
+  `railway volume files delete` does, and the CLI refuses that from an agent,
+  so ask Costa to run it. A service with a volume has a
+  few seconds of downtime per deploy; that is accepted.
 - Zero dependencies. `package.json` has none on purpose; use Node built-ins
   (`fetch`, `fs`, `path`, `crypto`).
 
@@ -92,6 +106,7 @@ first, so a bad entry fails the deploy instead of rendering wrong.
 ```
 entries/            one JSON per entry
 images/             photos; images/previews/ for link previews
+media/              gitignored local mirror of the Railway volume (videos)
 tags.json           tag vocabulary (name → one-line meaning)
 src/build.js        entries → site/ (index.html, things.json, feed.xml)
 src/validate.js     schema checks, used by build and the skill
@@ -100,5 +115,5 @@ src/template.html   page shell; src/style.css
 scripts/capture.js  CLI used by the skill to write a new entry
 scripts/migrate-index.js   one-off migration from the old index.md (kept for history)
 skill/SKILL.md      the /things skill (symlinked from ~/.claude/skills/things)
-server.js           static server for site/ (Railway start command)
+server.js           static server for site/ + /media/ from the volume (Railway start command)
 ```

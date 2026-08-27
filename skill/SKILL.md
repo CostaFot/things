@@ -1,6 +1,6 @@
 ---
 name: things
-description: Add an entry to Costa's things feed (things.costafotiadis.com) and publish it. Use when Costa sends /things, "add to things", "note this", "save this link", a bare URL with a comment from a Remote Control session, or asks to enrich or tag existing things entries. Triggers - things, /things, note this, save this, add this link, things enrich, things photo.
+description: Add an entry to Costa's things feed (things.costafotiadis.com) and publish it. Use when Costa sends /things, "add to things", "note this", "save this link", a bare URL with a comment from a Remote Control session, or asks to enrich or tag existing things entries. Triggers - things, /things, note this, save this, add this link, things enrich, things photo, things video.
 ---
 
 # things
@@ -13,7 +13,7 @@ is the whole point.
 |---|---|
 | Repo | `/home/costa/Work/things` |
 | Site | https://things.costafotiadis.com |
-| Railway | project `things-bot` (`5335fc44-4a68-4f44-8668-61e72b879033`), service `things` (`fac0a982-4553-4d4b-950a-461292cfc42a`), env `b49eb826-41a2-4283-90b8-dafc3199f155` |
+| Railway | project `things-bot` (`5335fc44-4a68-4f44-8668-61e72b879033`), service `things` (`fac0a982-4553-4d4b-950a-461292cfc42a`), env `b49eb826-41a2-4283-90b8-dafc3199f155`, volume `media` (`3c1321a2-555c-443e-882c-8cc077b9faea`, mounted at `/data`) |
 | Tags | `tags.json` in the repo |
 
 **Arguments.** Everything after `/things`:
@@ -23,6 +23,7 @@ is the whole point.
 | `<url> [comment]` (first token is a URL) | `link` |
 | `idea …` / `idea: …` | `idea` |
 | an attached image `[caption]`, or `photo <path> [caption]` | `photo` |
+| an attached video `[caption]`, or `video <path> [caption]` | `video` |
 | `enrich [N]` | enrich N un-enriched entries, default 5 |
 | `tags` | print the tag vocabulary and stop |
 | anything else | `note` |
@@ -33,6 +34,13 @@ Use that path with `--file`; `capture.js` copies it into `images/<id>.jpg`.
 A `/things` message whose only content is an image is a `photo` with an empty
 caption; text alongside the image is the caption. Never write a photo entry
 without a real file.
+
+Videos work the same way with `--type video` (`.mp4`, `.webm` or `.mov`).
+The file is *not* committed: `capture.js` copies it to `media/<id>.<ext>`
+(gitignored) and uploads it to the Railway volume `media` via
+`railway volume files upload` — this needs the Railway CLI logged in with an
+SSH key registered, which is the case on Costa's laptop. If the upload fails,
+no entry is written; report the error, do not retry with `--no-upload`.
 
 ## Steps
 
@@ -47,6 +55,7 @@ without a real file.
    node scripts/capture.js --type idea  --text "<text>"
    node scripts/capture.js --type note  --text "<text>"
    node scripts/capture.js --type photo --file "<path>" --text "<caption>"
+   node scripts/capture.js --type video --file "<path>" --text "<caption>"
    ```
    It prints the file path and the entry. Title and preview are fetched for
    links; if the title came back as just the hostname, fetch it yourself
@@ -79,6 +88,8 @@ without a real file.
 6. **Confirm.** Poll `curl -s https://things.costafotiadis.com/things.json | jq -r '.[0].id'`
    every 15 s for up to 3 min until it returns the new id. On timeout use
    `mcp__railway__list-deployments` / `get-logs` and report what failed.
+   For a video also check `curl -sI https://things.costafotiadis.com/<video path>`
+   returns `200` with `Accept-Ranges: bytes`.
 
 7. **Reply** in phone length: the link `https://things.costafotiadis.com/#<id>`,
    the tags, and the `text_raw → text` diff if there was one. Nothing else.
@@ -93,7 +104,8 @@ the same way — then steps 4–7 with the commit message
 ## Gotchas
 
 - `date` must carry an offset (`+01:00`), never `Z`; `capture.js` does this.
-- `site/` is build output, never committed.
+- `site/` and `media/` are never committed (`media/` is only a local mirror of
+  the volume; the volume is what the site serves).
 - `index.md` no longer exists; do not recreate it.
 - x.com and instagram give no useful title or og:image without a login; keep
   whatever `capture.js` got and move on.

@@ -5,13 +5,15 @@ const path = require("node:path");
 
 const ROOT = path.resolve(__dirname, "..");
 const ENTRIES = path.join(ROOT, "entries");
-const TYPES = new Set(["idea", "note", "link", "photo"]);
+const TYPES = new Set(["idea", "note", "link", "photo", "video"]);
+// Videos live on the Railway volume, not in git: media/<id>.<ext>, served at /media/.
+const VIDEO_RE = /^media\/\d{8}_\d{6}(_\d+)?\.(mp4|webm|mov)$/;
 const SOURCES = new Set(["claude", "telegram"]);
 const ID_RE = /^\d{8}_\d{6}(_\d+)?$/;
 const DATE_RE = /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}[+-]\d{2}:\d{2}$/;
 const KNOWN_KEYS = new Set([
   "schema", "id", "date", "type", "source", "text", "text_raw", "url", "title",
-  "image", "preview", "tags", "claude", "migrated", "date_precision",
+  "image", "video", "preview", "tags", "claude", "migrated", "date_precision",
 ]);
 
 function loadTags() {
@@ -52,6 +54,13 @@ function validateEntry(e, file, tags) {
     if (typeof e.image === "string") need(fs.existsSync(path.join(ROOT, e.image)), `image file missing: ${e.image}`);
   } else {
     need(e.image === undefined, "image only allowed on photo");
+  }
+
+  if (e.type === "video") {
+    need(typeof e.video === "string" && VIDEO_RE.test(e.video), "video needs video: media/<id>.(mp4|webm|mov)");
+    if (typeof e.video === "string") need(e.video.startsWith(`media/${e.id}.`), `video path must be named after the id (${e.id})`);
+  } else {
+    need(e.video === undefined, "video only allowed on video");
   }
 
   if (e.preview !== undefined) {

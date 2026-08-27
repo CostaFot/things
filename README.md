@@ -1,6 +1,6 @@
 # things
 
-Links, ideas, notes and photos I send myself, rendered at
+Links, ideas, notes, photos and videos I send myself, rendered at
 [things.costafotiadis.com](https://things.costafotiadis.com). One JSON file per
 entry in `entries/`, a static site built from them, hosted on Railway. Every
 push to `main` deploys.
@@ -12,7 +12,7 @@ The story of v1 (the Telegram bot) is in
 
 Through Claude Code. I open a Remote Control session from my phone and type
 `/things https://some.link my comment`, `/things idea …`, or attach a photo
-with a caption. Claude fetches the title and a preview, fixes my typos, tags
+or a video with a caption. Claude fetches the title and a preview, fixes my typos, tags
 it, sometimes adds a line of context, commits and pushes. Railway rebuilds in
 about a minute.
 
@@ -27,6 +27,7 @@ rendered under a `claude` label. The exact rule is in [AGENTS.md](AGENTS.md).
 | `note` | 💬 a thought, a book, a milestone |
 | `link` | 🔗 a URL with an optional comment; ▶️ if it's YouTube |
 | `photo` | 🖼️ an image with an optional caption |
+| `video` | 🎬 a video with an optional caption — the file lives on a Railway volume, not in git |
 
 `/feed.xml` is an RSS feed. `/things.json` is every entry as JSON.
 
@@ -34,7 +35,7 @@ rendered under a `claude` label. The exact rule is in [AGENTS.md](AGENTS.md).
 
 ```sh
 node src/build.js   # entries/ -> site/
-node server.js      # http://localhost:3000
+node server.js      # http://localhost:3000; videos from ./media (MEDIA_DIR to override)
 ```
 
 No dependencies. Node 22 or newer.

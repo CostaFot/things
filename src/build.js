@@ -1,5 +1,6 @@
 #!/usr/bin/env node
 // entries/*.json -> site/ (index.html, things.json, feed.xml, images/, favicon.svg)
+// Videos are not copied: server.js serves /media/* from the Railway volume.
 const fs = require("node:fs");
 const path = require("node:path");
 const { loadEntries, ROOT } = require("./validate.js");
@@ -26,6 +27,7 @@ function mark(e) {
   if (e.type === "idea") return "💡";
   if (e.type === "note") return "💬";
   if (e.type === "photo") return "🖼️";
+  if (e.type === "video") return "🎬";
   return youtubeId(e.url) ? "▶️" : "🔗";
 }
 
@@ -45,6 +47,9 @@ function renderEntry(e) {
   }
   if (e.type === "photo") {
     body += `<a class="photo" href="/${attr(e.image)}"><img src="/${attr(e.image)}" alt="${attr(e.text)}" loading="lazy"></a>`;
+  }
+  if (e.type === "video") {
+    body += `<video class="video" src="/${attr(e.video)}" controls preload="metadata" playsinline></video>`;
   }
   body += `<p class="text">${richText(e.text)}</p>`;
   if (e.claude) {
@@ -83,10 +88,11 @@ function renderTags(entries, tags) {
 
 function renderFeed(entries) {
   const items = entries.slice(0, 50).map((e) => {
-    const title = e.type === "link" ? e.title : (e.text.split("\n")[0].slice(0, 80) || `photo ${e.id}`);
+    const title = e.type === "link" ? e.title : (e.text.split("\n")[0].slice(0, 80) || `${e.type} ${e.id}`);
     let html = "";
     if (e.type === "link") html += `<p><a href="${attr(e.url)}">${esc(e.title)}</a> <small>${esc(domainOf(e.url))}</small></p>`;
     if (e.type === "photo") html += `<p><img src="${SITE}/${attr(e.image)}" alt="${attr(e.text)}"></p>`;
+    if (e.type === "video") html += `<p><a href="${SITE}/${attr(e.video)}">▶ video</a></p>`;
     if (e.text) html += `<p>${richText(e.text).replace(/\n/g, "<br>")}</p>`;
     if (e.claude) html += `<p><em>claude:</em> ${richText(e.claude.summary)}</p>`;
     return `  <item>

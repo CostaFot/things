@@ -26,3 +26,6 @@ npm-debug.log*
 
 # Build output (Railway builds it)
 site/
+
+# Local mirror of the Railway volume (videos); the volume is the source of truth
+media/

@@ -108,6 +108,9 @@ img { max-width: 100%; height: auto; display: block; }
 /* photo entries */
 .photo { margin: 0 0 0.6rem; max-width: 26rem; border-radius: 6px; overflow: hidden; border: 1px solid var(--border); }
 
+/* video entries — file lives on the Railway volume, served from /media/ */
+.video { display: block; width: 100%; max-width: 26rem; max-height: 32rem; margin: 0 0 0.6rem; border-radius: 6px; border: 1px solid var(--border); background: #000; }
+
 /* claude's block — visibly not Costa's words */
 .claude {
   margin: 0.75rem 0 0;
