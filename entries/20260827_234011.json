@@ -1,0 +1,12 @@
+{
+  "schema": 1,
+  "id": "20260827_234011",
+  "date": "2026-08-28T02:40:11+03:00",
+  "type": "video",
+  "source": "claude",
+  "text": "test cat!",
+  "video": "media/20260827_234011.mp4",
+  "tags": [
+    "life"
+  ]
+}
