@@ -2,8 +2,9 @@
 
 This repo is Costa's "things" feed: links, ideas, notes and photos, one JSON
 file per entry, rendered as a static site at https://things.costafotiadis.com.
-Git is the database. **Every push to `main` deploys** (Railway, project
-`things`, service `things`).
+Git is the database. **Every push to `main` deploys** (Railway project
+`things-bot`, service `things`, generated domain
+things-production-f67b.up.railway.app).
 
 Capture happens through the `/things` skill in `skill/SKILL.md` — usually from
 Costa's phone over a Claude Code Remote Control session. Claude is the only

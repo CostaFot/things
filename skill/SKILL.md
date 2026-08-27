@@ -13,7 +13,7 @@ is the whole point.
 |---|---|
 | Repo | `/home/costa/Work/things` |
 | Site | https://things.costafotiadis.com |
-| Railway | project `things` (`5335fc44-4a68-4f44-8668-61e72b879033`), service `things` |
+| Railway | project `things-bot` (`5335fc44-4a68-4f44-8668-61e72b879033`), service `things` (`fac0a982-4553-4d4b-950a-461292cfc42a`), env `b49eb826-41a2-4283-90b8-dafc3199f155` |
 | Tags | `tags.json` in the repo |
 
 **Arguments.** Everything after `/things`:
