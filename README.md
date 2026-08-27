@@ -11,9 +11,10 @@ The story of v1 (the Telegram bot) is in
 ## How entries get in
 
 Through Claude Code. I open a Remote Control session from my phone and type
-`/things https://some.link my comment`, `/things idea …`, or attach a photo with a caption. Claude fetches the
-title and a preview, fixes my typos, tags it, sometimes adds a line of context,
-commits and pushes. Railway rebuilds in about a minute.
+`/things https://some.link my comment`, `/things idea …`, or attach a photo
+with a caption. Claude fetches the title and a preview, fixes my typos, tags
+it, sometimes adds a line of context, commits and pushes. Railway rebuilds in
+about a minute.
 
 My words stay my words. Anything the agent adds is stored separately and
 rendered under a `claude` label. The exact rule is in [AGENTS.md](AGENTS.md).

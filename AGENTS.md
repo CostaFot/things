@@ -71,16 +71,19 @@ first, so a bad entry fails the deploy instead of rendering wrong.
 ## Rules of the repo
 
 - Never commit `site/` (build output; gitignored).
-- Never edit an entry's `text` of an existing entry except to apply the voice
-  rule to a migrated entry during `/things enrich`.
+- Never rewrite the `text` of an existing entry. The only exception is
+  applying the voice rule to a migrated entry during `/things enrich`.
 - Commit messages: `things: add <type> <text[:60]>`, `things: enrich <n>
   entries`, `things: <what>` for everything else. No Co-Authored-By. Never
   amend.
 - The `/things` invocation is the authorisation to commit and push that entry.
   Do not push anything else that happens to be dirty — the skill checks
   `git status --porcelain` is clean before it starts.
-- Images: photos attached from the mobile app land in `~/.claude/uploads/<session>/` with the path in the message; `capture.js --file` copies them to `images/<id>.jpg`. Link previews are downloaded into
-  `images/previews/<id>.<ext>` (max 1 MB, else skip). Do not hotlink.
+- Images: photos attached from the mobile app land in
+  `~/.claude/uploads/<session>/` and the path is given in the message;
+  `capture.js --file` copies them to `images/<id>.<ext>`. Link previews are
+  downloaded into `images/previews/<id>.<ext>` (max 1 MB, else skip). Do not
+  hotlink.
 - Zero dependencies. `package.json` has none on purpose; use Node built-ins
   (`fetch`, `fs`, `path`, `crypto`).
 
